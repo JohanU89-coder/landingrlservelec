@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R&L Servelec: Expertos en instalación, mantenimiento y reparación de aire acondicionado en Perú. Soluciones rápidas y eficiencia energética.">
+    <title>R&L Servelec | Climatización Profesional en Perú</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#5CACFF',
+                            DEFAULT: '#1E90FF', // Azul Frío solicitado
+                            dark: '#0056b3',
+                        },
+                        tech: {
+                            gray: '#F3F4F6',
+                            slate: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados para efectos específicos */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* Efecto de Niebla/Aire Frío */
+        .mist-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden; pointer-events: none; z-index: 1;
+        }
+        .mist {
+            position: absolute;
+            width: 200%; height: 100%;
+            background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x;
+            background-size: contain;
+            animation: mistMove 60s linear infinite;
+            opacity: 0.3;
+        }
+        @keyframes mistMove {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Textura Malla Metálica */
+        .bg-tech-mesh {
+            background-image: radial-gradient(#1E90FF 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-brand tracking-tighter flex items-center gap-2">
+                <i class="ph-fill ph-fan text-3xl animate-spin-slow" style="animation-duration: 10s;"></i>
+                R&L SERVELEC
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600">
+                <a href="#servicios" class="hover:text-brand transition">Servicios</a>
+                <a href="#beneficios" class="hover:text-brand transition">Beneficios</a>
+                <a href="#testimonios" class="hover:text-brand transition">Clientes</a>
+            </div>
+            <a href="https://wa.me/51974570175" class="hidden md:flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-full transition-all shadow-lg hover:shadow-brand/50 font-semibold">
+                <i class="ph-fill ph-whatsapp-logo text-lg"></i> Cotizar
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Oficina moderna con aire acondicionado" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-brand-dark/20 to-slate-900/60"></div>
+        </div>
+
+        <div class="mist-container">
+            <div class="mist"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center md:text-left md:flex items-center">
+            <div class="md:w-2/3">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand/20 border border-brand/50 text-brand-light text-sm font-semibold mb-4 backdrop-blur-sm" data-aos="fade-down">
+                    ❄️ Tecnología y Confort en Perú
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4" data-aos="fade-up" data-aos-delay="100">
+                    Climatizamos tus espacios con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-light to-white">eficiencia y garantía</span>.
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 h-8 font-light" data-aos="fade-up" data-aos-delay="200">
+                    Expertos en <span id="typewriter" class="text-brand font-semibold border-r-2 border-brand pr-1 animate-pulse"></span>
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://wa.me/51974570175" class="group relative px-8 py-4 bg-brand text-white font-bold rounded-lg overflow-hidden shadow-[0_0_20px_rgba(30,144,255,0.5)] transition-all hover:scale-105">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Cotizar por WhatsApp <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    </a>
+                    <a href="#servicios" class="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition backdrop-blur-sm">
+                        Ver Servicios
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden md:block md:w-1/3 relative" data-aos="fade-left" data-aos-duration="1500">
+                <div class="relative bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20 shadow-2xl animate-float">
+                    <div class="flex justify-between items-center mb-4 text-white">
+                        <span>Temperatura Ideal</span>
+                        <i class="ph-fill ph-thermometer-cold text-brand-light text-2xl"></i>
+                    </div>
+                    <div class="text-6xl font-bold text-white text-center mb-2">21°C</div>
+                    <div class="flex justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                        <span class="text-xs text-brand-light">Sistema Activo - Ahorro Energía</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand/5 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Soluciones Integrales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Resolvemos cualquier necesidad de climatización con los más altos estándares técnicos.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-duotone ph-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Instalación</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Montaje de equipos split, ducto y centrales. Diseño de proyectos para oficinas y residencias con cálculo térmico preciso.
+                    </p>
+                    <a href="#" class="text-brand font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Saber más <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <div class="group bg-white p-8 rounded-2xl shadow-lg border border-brand/20 relative overflow-hidden hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 bg-brand text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Más solicitado</div>
+                    <div class="w-16 h-16 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-duotone ph-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Mantenimiento</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Preventivo y correctivo. Limpieza profunda, desinfección y carga de gas para asegurar la vida útil de tu equipo.
+                    </p>
+                    <a href="#" class="text-brand font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Agendar visita <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <div class="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-duotone ph-gear-six"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Reparación</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Diagnóstico técnico avanzado. Solucionamos fugas, fallas eléctricas y ruidos molestos. Atención de emergencias.
+                    </p>
+                    <a href="#" class="text-brand font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Pedir técnico <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="py-20 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-tech-mesh"></div> <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Por qué elegirnos</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Expertos en frío, <br> obsesionados con la calidad.</h2>
+                <p class="text-gray-400 mb-8">No solo instalamos equipos, optimizamos tu consumo energético y garantizamos un ambiente saludable.</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mt-1">
+                            <i class="ph-bold ph-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white group-hover:text-brand transition-colors">Ahorro Energético</h4>
+                            <p class="text-sm text-gray-500">Equipos optimizados para reducir tu recibo de luz.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mt-1">
+                            <i class="ph-bold ph-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white group-hover:text-brand transition-colors">Técnicos Certificados</h4>
+                            <p class="text-sm text-gray-500">Personal capacitado constantemente en nuevas tecnologías.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mt-1">
+                            <i class="ph-bold ph-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white group-hover:text-brand transition-colors">Garantía Real</h4>
+                            <p class="text-sm text-gray-500">Soporte post-venta asegurado para tu tranquilidad.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="relative" data-aos="zoom-in">
+                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop" alt="Técnico reparando aire acondicionado" class="w-full object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand/20 group-hover:bg-transparent transition duration-500"></div>
+                    
+                    <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur text-slate-900 p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <i class="ph-fill ph-shield-check text-3xl text-brand"></i>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-bold">Certificación</p>
+                                <p class="font-bold">ISO 9001 Standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-800">Resultados Visibles</h2>
+        </div>
+        <div class="flex overflow-x-auto gap-6 pb-8 px-6 snap-x snap-mandatory">
+            <div class="min-w-[300px] md:min-w-[500px] snap-center bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="relative h-64">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41e157d4430c?q=80&w=2074&auto=format&fit=crop" class="w-full h-full object-cover" alt="Instalación terminada limpia">
+                    <div class="absolute bottom-4 right-4 bg-green-500 text-white px-3 py-1 rounded text-sm font-bold">RESULTADO FINAL</div>
+                </div>
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">Instalación Residencial - Miraflores</h4>
+                    <p class="text-sm text-gray-500">Sistema oculto con acabados premium.</p>
+                </div>
+            </div>
+            <div class="min-w-[300px] md:min-w-[500px] snap-center bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="relative h-64">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mantenimiento Industrial">
+                    <div class="absolute bottom-4 right-4 bg-brand text-white px-3 py-1 rounded text-sm font-bold">MANTENIMIENTO INDUSTRIAL</div>
+                </div>
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">Planta Industrial - Lima Norte</h4>
+                    <p class="text-sm text-gray-500">Mantenimiento preventivo de chillers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-brand text-white" id="stats-section">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 flex justify-center"><span class="counter" data-target="500">0</span>+</div>
+                    <p class="text-sm md:text-base text-brand-light">Instalaciones Exitosas</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 flex justify-center"><span class="counter" data-target="99">0</span>%</div>
+                    <p class="text-sm md:text-base text-brand-light">Satisfacción</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 flex justify-center"><span class="counter" data-target="24">0</span>h</div>
+                    <p class="text-sm md:text-base text-brand-light">Atención Emergencias</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 flex justify-center"><span class="counter" data-target="10">0</span></div>
+                    <p class="text-sm md:text-base text-brand-light">Años de experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-800">Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative" data-aos="fade-up">
+                <i class="ph-fill ph-quotes text-4xl text-brand/20 absolute top-4 left-4"></i>
+                <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Excelente servicio. Llegaron puntuales a mi oficina en San Isidro y dejaron todo impecable. El aire funciona perfecto."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">CR</div>
+                    <div class="text-left">
+                        <p class="font-bold text-sm text-slate-800">Carlos Rodriguez</p>
+                        <p class="text-xs text-gray-500">Gerente Administrativo</p>
+                    </div>
+                </div>
+            </div>
+             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
+                <i class="ph-fill ph-quotes text-4xl text-brand/20 absolute top-4 left-4"></i>
+                <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Los contacté por WhatsApp y la cotización fue muy rápida. El precio es justo por la calidad técnica que ofrecen."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">MV</div>
+                    <div class="text-left">
+                        <p class="font-bold text-sm text-slate-800">María Vargas</p>
+                        <p class="text-xs text-gray-500">Propietaria de Hogar</p>
+                    </div>
+                </div>
+            </div>
+             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
+                <i class="ph-fill ph-quotes text-4xl text-brand/20 absolute top-4 left-4"></i>
+                <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Recuperaron un equipo que otros técnicos daban por perdido. Muy honestos con el diagnóstico."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">JL</div>
+                    <div class="text-left">
+                        <p class="font-bold text-sm text-slate-800">Jorge Luis P.</p>
+                        <p class="text-xs text-gray-500">Cliente Recurrente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden bg-brand-dark flex items-center justify-center">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand/50 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse-slow"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Respira aire fresco hoy.</h2>
+            <p class="text-brand-light text-lg mb-8">No dejes que el calor te gane. Agenda una visita técnica ahora y disfruta del confort que mereces.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/+51974570175" class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full shadow-lg transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-whatsapp-logo text-xl"></i> Escribir al WhatsApp
+                </a>
+                <a href="tel:+51974570175" class="px-8 py-4 bg-white text-brand-dark hover:bg-gray-100 font-bold rounded-full shadow-lg transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-phone text-xl"></i> Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-gray-400 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="text-2xl font-bold text-white tracking-tighter flex items-center gap-2 mb-4">
+                    <i class="ph-fill ph-fan text-brand"></i>
+                    R&L SERVELEC
+                </div>
+                <p class="max-w-xs text-sm">Expertos en climatización en Perú. Instalación, mantenimiento y reparación con estándares de calidad superior.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Servicios</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-brand transition">Instalación Aire Acondicionado</a></li>
+                    <li><a href="#" class="hover:text-brand transition">Mantenimiento Preventivo</a></li>
+                    <li><a href="#" class="hover:text-brand transition">Carga de Gas</a></li>
+                    <li><a href="#" class="hover:text-brand transition">Proyectos Industriales</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contacto</h4>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><i class="ph-fill ph-phone text-brand"></i> +51 999 999 999</li>
+                    <li class="flex items-center gap-2"><i class="ph-fill ph-envelope text-brand"></i> contacto@rlservelec.pe</li>
+                    <li class="flex items-center gap-2"><i class="ph-fill ph-map-pin text-brand"></i> Lima, Perú</li>
+                </ul>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="text-white hover:text-brand transition text-xl"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#" class="text-white hover:text-brand transition text-xl"><i class="ph-fill ph-instagram-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 pt-8 border-t border-slate-800 text-center text-xs">
+            <p>&copy; 2024 R&L Servelec. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 1. Inicializar AOS (Animaciones al Scroll)
+        AOS.init({
+            once: true, // Animación solo una vez
+            offset: 100, // Trigger offset
+            duration: 800, // Duración default
+            easing: 'ease-out-cubic',
+        });
+
+        // 2. Typewriter Effect
+        const words = ["Instalación.", "Mantenimiento.", "Reparación."];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const element = document.getElementById("typewriter");
+            const word = words[i];
+            const current = element.textContent;
+
+            if (current.length < word.length) {
+                element.textContent = word.substring(0, current.length + 1);
+                timer = setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            const element = document.getElementById("typewriter");
+            const current = element.textContent;
+
+            if (current.length > 0) {
+                element.textContent = current.substring(0, current.length - 1);
+                timer = setTimeout(erase, 50);
+            } else {
+                i = (i + 1) % words.length;
+                typeWriter();
+            }
+        }
+        // Iniciar typewriter
+        typeWriter();
+
+        // 3. Animación de Números (Contador)
+        const counters = document.querySelectorAll('.counter');
+        const statsSection = document.getElementById('stats-section');
+        let started = false; // Flag para asegurar que solo corra una vez
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const speed = 200; // Cuanto más bajo, más lento
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Observer para disparar contadores al ver la sección
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !started) {
+                startCounters();
+                started = true;
+            }
+        });
+        observer.observe(statsSection);
+
+        // 4. Navbar Background change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
