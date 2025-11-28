@@ -253,31 +253,100 @@
         </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6 text-center mb-10">
-            <h2 class="text-3xl font-bold text-slate-800">Resultados Visibles</h2>
+    <section class="py-20 bg-gray-50 border-y border-gray-200" id="proyectos">
+        <div class="container mx-auto px-6 mb-10 flex flex-col md:flex-row justify-between items-end gap-4">
+            <div>
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Portafolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Nuestros Proyectos Recientes</h2>
+            </div>
+            <div class="hidden md:flex items-center gap-2 text-gray-400 text-sm animate-pulse">
+                Desliza para ver más <i class="ph-bold ph-arrow-right"></i>
+            </div>
         </div>
-        <div class="flex overflow-x-auto gap-6 pb-8 px-6 snap-x snap-mandatory">
-            <div class="min-w-[300px] md:min-w-[500px] snap-center bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-                <div class="relative h-64">
-                    <img src="https://images.unsplash.com/photo-1517502884422-41e157d4430c?q=80&w=2074&auto=format&fit=crop" class="w-full h-full object-cover" alt="Instalación terminada limpia">
-                    <div class="absolute bottom-4 right-4 bg-green-500 text-white px-3 py-1 rounded text-sm font-bold">RESULTADO FINAL</div>
+
+        <div class="flex overflow-x-auto gap-6 pb-12 px-6 snap-x snap-mandatory scrollbar-hide">
+            
+            <div class="min-w-[85vw] md:min-w-[450px] snap-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41e157d4430c?q=80&w=2074&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Instalación terminada limpia">
+                    <div class="absolute bottom-4 right-4 bg-green-500 text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm tracking-wide">RESIDENCIAL</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
                 </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-lg">Instalación Residencial - Miraflores</h4>
-                    <p class="text-sm text-gray-500">Sistema oculto con acabados premium.</p>
-                </div>
-            </div>
-            <div class="min-w-[300px] md:min-w-[500px] snap-center bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-                <div class="relative h-64">
-                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mantenimiento Industrial">
-                    <div class="absolute bottom-4 right-4 bg-brand text-white px-3 py-1 rounded text-sm font-bold">MANTENIMIENTO INDUSTRIAL</div>
-                </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-lg">Planta Industrial - Lima Norte</h4>
-                    <p class="text-sm text-gray-500">Mantenimiento preventivo de chillers.</p>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl text-slate-800 mb-2">Departamento Dúplex - Miraflores</h4>
+                    <p class="text-sm text-gray-500 mb-4">Instalación de sistema Multi-Split oculto. Acabado estético sin alterar el diseño interior.</p>
+                    <div class="flex gap-2 text-xs font-medium text-brand-dark">
+                        <span class="bg-blue-50 px-2 py-1 rounded">Silencioso</span>
+                        <span class="bg-blue-50 px-2 py-1 rounded">Ahorro A++</span>
+                    </div>
                 </div>
             </div>
+
+            <div class="min-w-[85vw] md:min-w-[450px] snap-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c54be3855091?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Mantenimiento Industrial">
+                    <div class="absolute bottom-4 right-4 bg-brand text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm tracking-wide">INDUSTRIAL</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl text-slate-800 mb-2">Planta Textil - Lima Norte</h4>
+                    <p class="text-sm text-gray-500 mb-4">Mantenimiento correctivo de Chillers y ducteria mayor. Restauración de flujo de aire al 100%.</p>
+                    <div class="flex gap-2 text-xs font-medium text-brand-dark">
+                        <span class="bg-blue-50 px-2 py-1 rounded">Alto Rendimiento</span>
+                        <span class="bg-blue-50 px-2 py-1 rounded">Normativa ISO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[450px] snap-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Oficinas Corporativas">
+                    <div class="absolute bottom-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm tracking-wide">CORPORATIVO</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl text-slate-800 mb-2">Edificio Empresarial - San Isidro</h4>
+                    <p class="text-sm text-gray-500 mb-4">Implementación de sistema VRF para 5 pisos de oficinas. Control centralizado inteligente.</p>
+                    <div class="flex gap-2 text-xs font-medium text-brand-dark">
+                        <span class="bg-blue-50 px-2 py-1 rounded">Sistema VRF</span>
+                        <span class="bg-blue-50 px-2 py-1 rounded">Control Smart</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[450px] snap-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Aire acondicionado comercial">
+                    <div class="absolute bottom-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm tracking-wide">COMERCIAL</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl text-slate-800 mb-2">Cadena de Restaurantes - Surco</h4>
+                    <p class="text-sm text-gray-500 mb-4">Instalación de unidades tipo Cassette 360° para distribución uniforme sin afectar a los comensales.</p>
+                    <div class="flex gap-2 text-xs font-medium text-brand-dark">
+                        <span class="bg-blue-50 px-2 py-1 rounded">Estética</span>
+                        <span class="bg-blue-50 px-2 py-1 rounded">Confort Térmico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[450px] snap-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Reparación técnica">
+                    <div class="absolute bottom-4 right-4 bg-red-500 text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm tracking-wide">EMERGENCIA</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl text-slate-800 mb-2">Clínica Dental - La Molina</h4>
+                    <p class="text-sm text-gray-500 mb-4">Reparación de urgencia por fuga de gas. El sistema quedó operativo en menos de 4 horas.</p>
+                    <div class="flex gap-2 text-xs font-medium text-brand-dark">
+                        <span class="bg-blue-50 px-2 py-1 rounded">Respuesta Rápida</span>
+                        <span class="bg-blue-50 px-2 py-1 rounded">Garantía</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[20px]"></div>
         </div>
     </section>
 
